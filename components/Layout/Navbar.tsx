@@ -27,10 +27,11 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav 
-      dir={language === 'ar' ? 'rtl' : 'ltr'}
-      className="glass-effect sticky top-0 z-[9990] shadow-premium border-b border-white/5"
-    >
+    <>
+      <nav 
+        dir={language === 'ar' ? 'rtl' : 'ltr'}
+        className="glass-effect sticky top-0 z-[9990] shadow-premium border-b border-white/5"
+      >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center gap-3 md:gap-4">
@@ -119,94 +120,95 @@ export function Navbar() {
           </div>
         </div>
       </div>
+    </nav>
+    
+    {/* Mobile Side Panel - Moved outside <nav> to avoid glass-effect containing block issues */}
+    <div className={cn(
+      "fixed inset-0 z-[9999] transition-opacity duration-500 md:hidden",
+      isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+    )}>
+      {/* Backdrop with better blur */}
+      <div 
+        className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+        onClick={() => setIsOpen(false)}
+      />
+      
+      {/* Panel with improved styling */}
+      <div 
+        dir={language === 'ar' ? 'rtl' : 'ltr'}
+        className={cn(
+          "absolute inset-y-0 h-screen w-[300px] bg-card border-x border-white/10 shadow-[20px_0_50px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-in-out flex flex-col rounded-none",
+          language === 'ar' 
+            ? (isOpen ? "left-0 translate-x-0" : "left-0 -translate-x-full")
+            : (isOpen ? "right-0 translate-x-0" : "right-0 translate-x-full")
+        )}
+      >
+        <div className="p-6 border-b border-white/5 flex items-center justify-between">
+          <span className="font-cairo text-xl font-black text-primary uppercase">{t('nav.menu')}</span>
+          <button 
+            onClick={() => setIsOpen(false)}
+            className="p-2 bg-soft text-muted rounded-lg hover:text-legal-red transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        </div>
 
-      {/* Mobile Side Panel */}
-      <div className={cn(
-        "fixed inset-0 z-[9999] transition-opacity duration-500 md:hidden",
-        isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
-      )}>
-        {/* Backdrop with better blur */}
-        <div 
-          className="absolute inset-0 bg-black/70 backdrop-blur-sm"
-          onClick={() => setIsOpen(false)}
-        />
-        
-        {/* Panel with improved styling */}
-        <div 
-          dir={language === 'ar' ? 'rtl' : 'ltr'}
-          className={cn(
-            "absolute top-0 bottom-0 h-full w-[300px] bg-card border-x border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-transform duration-500 ease-in-out flex flex-col",
-            language === 'ar' 
-              ? (isOpen ? "left-0 translate-x-0" : "left-0 -translate-x-full")
-              : (isOpen ? "right-0 translate-x-0" : "right-0 translate-x-full")
-          )}
-        >
-          <div className="p-6 border-b border-white/5 flex items-center justify-between">
-            <span className="font-cairo text-xl font-black text-primary uppercase">{t('nav.menu')}</span>
-            <button 
-              onClick={() => setIsOpen(false)}
-              className="p-2 bg-soft text-muted rounded-lg hover:text-legal-red transition-colors"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
+        <div className="flex-grow overflow-y-auto p-6 space-y-4">
+          <Link 
+            href="/chat" 
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-4 p-4 rounded-2xl bg-accent-bg border border-legal-red/10 text-primary font-black uppercase text-sm"
+          >
+            <div className="p-2 bg-legal-red rounded-xl text-white">
+              <Bot className="w-5 h-5" />
+            </div>
+            {t('nav.chat')}
+          </Link>
 
-          <div className="flex-grow overflow-y-auto p-6 space-y-4">
-            <Link 
-              href="/chat" 
-              onClick={() => setIsOpen(false)}
-              className="flex items-center gap-4 p-4 rounded-2xl bg-accent-bg border border-legal-red/10 text-primary font-black uppercase text-sm"
-            >
-              <div className="p-2 bg-legal-red rounded-xl text-white">
-                <Bot className="w-5 h-5" />
-              </div>
-              {t('nav.chat')}
+          <div className="space-y-1">
+            <Link href="/search" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
+              {t('nav.search')}
             </Link>
-
-            <div className="space-y-1">
-              <Link href="/search" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
-                {t('nav.search')}
-              </Link>
-              <Link href="/laws" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
-                {t('nav.laws')}
-              </Link>
-              <Link href="/favorites" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
-                <Heart className="w-4 h-4" />
-                {t('nav.favorites')}
-              </Link>
-            </div>
-
-            <div className="pt-4 border-t border-white/5 space-y-4">
-              {isAdmin && (
-                <Link href="/admin" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 bg-legal-red text-white font-black rounded-2xl shadow-legal uppercase text-sm">
-                  <LayoutDashboard className="w-5 h-5" />
-                  {t('nav.admin')}
-                </Link>
-              )}
-
-              {status === 'authenticated' && (
-                <button 
-                  onClick={() => { signOut({ callbackUrl: '/' }); setIsOpen(false); }}
-                  className="w-full flex items-center gap-4 px-4 py-3 rounded-xl text-text-secondary hover:text-legal-red hover:bg-legal-red/5 transition-all"
-                >
-                  <LogOut className="w-5 h-5" />
-                  <span className="font-medium">{t('nav.logout')}</span>
-                </button>
-              )}
-              {!session && (
-                <Link href="/login" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 bg-legal-red text-white font-black rounded-2xl shadow-legal uppercase text-sm">
-                  <User className="w-5 h-5" />
-                  {t('nav.login')}
-                </Link>
-              )}
-            </div>
+            <Link href="/laws" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
+              {t('nav.laws')}
+            </Link>
+            <Link href="/favorites" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
+              <Heart className="w-4 h-4" />
+              {t('nav.favorites')}
+            </Link>
           </div>
 
-          <div className="p-6 border-t border-white/5 flex items-center justify-center gap-6">
-            <LanguageSwitcher />
+          <div className="pt-4 border-t border-white/5 space-y-4">
+            {isAdmin && (
+              <Link href="/admin" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 bg-legal-red text-white font-black rounded-2xl shadow-legal uppercase text-sm">
+                <LayoutDashboard className="w-5 h-5" />
+                {t('nav.admin')}
+              </Link>
+            )}
+
+            {status === 'authenticated' && (
+              <button 
+                onClick={() => { signOut({ callbackUrl: '/' }); setIsOpen(false); }}
+                className="w-full flex items-center gap-4 px-4 py-3 rounded-xl text-text-secondary hover:text-legal-red hover:bg-legal-red/5 transition-all"
+              >
+                <LogOut className="w-5 h-5" />
+                <span className="font-medium">{t('nav.logout')}</span>
+              </button>
+            )}
+            {!session && (
+              <Link href="/login" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 bg-legal-red text-white font-black rounded-2xl shadow-legal uppercase text-sm">
+                <User className="w-5 h-5" />
+                {t('nav.login')}
+              </Link>
+            )}
           </div>
         </div>
+
+        <div className="p-6 border-t border-white/5 flex items-center justify-center gap-6">
+          <LanguageSwitcher />
+        </div>
       </div>
-    </nav>
+    </div>
+    </>
   );
 }

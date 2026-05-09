@@ -186,7 +186,7 @@ function ChatContent() {
                     ? "bg-card text-primary rounded-tr-none" 
                     : "bg-card text-primary rounded-tl-none border-l-4 border-legal-red/30"
                 )}>
-                  <div className="prose prose-sm dark:prose-invert max-w-none font-inter text-base">
+                  <div className="prose prose-sm dark:prose-invert max-w-none font-inter text-base text-primary">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
                       {msg.content}
                     </ReactMarkdown>
