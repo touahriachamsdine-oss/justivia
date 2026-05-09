@@ -32,6 +32,10 @@ export const metadata: Metadata = {
   title: "JUSTIVIA (جوستيفيا) - Algerian Legal Intelligence",
   description: "The definitive AI-powered legal intelligence platform for Algeria.",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icons/icon-192x192.png",
+    apple: "/icons/icon-192x192.png",
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
