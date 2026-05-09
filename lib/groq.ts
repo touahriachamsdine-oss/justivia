@@ -2,8 +2,9 @@ import Groq from 'groq-sdk';
 
 // We use a fallback during build time to prevent crashes on Vercel if the key isn't provided during static analysis.
 // Real API key must be provided in the Vercel Dashboard for runtime functionality.
+const rawApiKey = process.env.GROQ_API_KEY;
 const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY || 'missing_key_check_vercel_env',
+  apiKey: rawApiKey ? rawApiKey.replace(/^["']|["']$/g, '') : 'missing_key_check_vercel_env',
 });
 
 export default groq;

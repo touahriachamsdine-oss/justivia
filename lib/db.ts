@@ -5,7 +5,8 @@ import ws from 'ws';
 neonConfig.webSocketConstructor = ws;
 
 // Initialize the neon client with the database connection string
-const connectionString = process.env.DATABASE_URL;
+const rawConnectionString = process.env.DATABASE_URL;
+const connectionString = rawConnectionString ? rawConnectionString.replace(/^["']|["']$/g, '') : null;
 
 if (!connectionString && process.env.NODE_ENV === 'production') {
   console.warn('DATABASE_URL is missing in production environment!');
