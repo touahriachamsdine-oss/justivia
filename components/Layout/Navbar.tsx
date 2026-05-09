@@ -125,7 +125,7 @@ export function Navbar() {
         {/* Backdrop */}
         <div 
           className={cn(
-            "absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500",
+            "absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500",
             isOpen ? "opacity-100" : "opacity-0"
           )}
           onClick={() => setIsOpen(false)}
@@ -133,16 +133,17 @@ export function Navbar() {
         
         {/* Panel */}
         <div className={cn(
-          "absolute right-0 top-0 h-full w-[280px] bg-card shadow-2xl transition-transform duration-500 flex flex-col",
-          isOpen ? "translate-x-0" : "translate-x-full",
-          language === 'ar' && "right-auto left-0 translate-x-0",
-          language === 'ar' && !isOpen && "-translate-x-full"
+          "absolute top-0 bottom-0 h-full w-[280px] bg-card shadow-2xl transition-transform duration-500 flex flex-col",
+          language === 'ar' ? "left-0" : "right-0",
+          language === 'ar' 
+            ? (isOpen ? "translate-x-0" : "-translate-x-full")
+            : (isOpen ? "translate-x-0" : "translate-x-full")
         )}>
           <div className="p-6 border-b border-white/5 flex items-center justify-between">
-            <span className="font-cairo text-xl font-black text-primary uppercase">Menu</span>
+            <span className="font-cairo text-xl font-black text-primary uppercase">{t('nav.menu')}</span>
             <button 
               onClick={() => setIsOpen(false)}
-              className="p-2 bg-soft text-muted rounded-lg"
+              className="p-2 bg-soft text-muted rounded-lg hover:text-legal-red transition-colors"
             >
               <X className="w-5 h-5" />
             </button>
