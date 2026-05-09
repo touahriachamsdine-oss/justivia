@@ -1,50 +1,81 @@
 {
   "nav": {
     "home": "Home",
-    "chat": "Counselor",
+    "chat": "AI Consultant",
     "laws": "Law Index",
     "admin": "Admin",
     "logout": "Logout",
     "login": "Login",
-    "menu": "Menu"
+    "menu": "Menu",
+    "search": "Search",
+    "favorites": "Favorites",
+    "about": "About",
+    "terms": "Terms",
+    "privacy": "Privacy"
   },
   "home": {
     "title": "Justivia",
-    "tagline": "Your Expert AI in Algerian Administrative Law",
+    "tagline": "Your legal intelligence specialized in Algerian Administrative Law",
     "browseIndex": "Browse Full Legal Index",
-    "searchPlaceholder": "Ask Justivia about any legal case...",
-    "quickSearch": "Quick search:",
+    "searchPlaceholder": "Ask Justivia a legal question...",
+    "quickSearch": "Quick Search:",
     "latestLaws": "Latest Laws in Official Journal",
     "domainsTitle": "Legal Domains",
-    "adminActs": "Administrative Acts",
-    "adminActsDesc": "Decisions, circulars, regulations",
-    "publicFinance": "Public Finance",
-    "publicFinanceDesc": "Budget, taxes, procurement",
-    "civilRights": "Rights & Liberties",
-    "civilRightsDesc": "Public law, individual rights",
-    "localGov": "Local Government",
-    "localGovDesc": "Municipality, Wilaya, Management",
     "trending": "Trending:",
     "trends": {
       "law2218": "Law 22-18",
       "investment": "Investment Law",
       "familyCode": "Family Code",
       "civilCode": "Civil Code"
+    },
+    "stats": {
+      "laws": "Legal Texts",
+      "users": "Active Users",
+      "ai": "AI Accuracy",
+      "indexedLaws": "Archived Legal Texts",
+      "indexedLawsValue": "45,000+",
+      "dailyUpdates": "Automatic Daily Updates",
+      "dailyUpdatesValue": "100%",
+      "legalArticles": "Legal Specializations",
+      "legalArticlesValue": "12"
     }
   },
+  "domains": {
+    "adminActs": "Administrative Acts",
+    "adminActsDesc": "Decisions, circulars, regulations",
+    "publicFinance": "Public Finance",
+    "publicFinanceDesc": "Budget, taxation, procurement",
+    "civilRights": "Rights and Liberties",
+    "civilRightsDesc": "Public law, individual rights",
+    "localGov": "Local Government",
+    "localGovDesc": "Municipality, Province, management",
+    "civilService": "Civil Service",
+    "civilServiceDesc": "Staff management, rights and duties",
+    "publicContracts": "Public Contracts",
+    "publicContractsDesc": "Procurement and execution procedures",
+    "adminJustice": "Administrative Justice",
+    "adminJusticeDesc": "Administrative litigation, Council of State"
+  },
   "search": {
-    "placeholder": "Search a case...",
-    "results": "Search results",
-    "noResults": "No results found"
+    "all": "All",
+    "placeholder": "Search for a legal text...",
+    "results": "Search Results",
+    "noResults": "No results found",
+    "examples": {
+      "title": "Search examples:",
+      "family": "Algerian family law and inheritance",
+      "commerce": "Commercial law and companies",
+      "realestate": "Real estate law and property"
+    }
   },
   "auth": {
-    "login": "Sign In",
+    "login": "Login",
     "email": "Email",
     "password": "Password",
-    "submit": "Login",
-    "noAccount": "Don't have an account?",
-    "register": "Register",
-    "adminLogin": "Admin Login"
+    "submit": "Sign In",
+    "noAccount": "No account?",
+    "register": "Sign Up",
+    "adminLogin": "Admin Access"
   },
   "categories": {
     "all": "All",
@@ -59,8 +90,13 @@
   },
   "laws": {
     "indexTitle": "Algerian Law Index",
-    "searchPlaceholder": "Search laws...",
+    "searchPlaceholder": "Search available laws...",
     "readMore": "View Details",
-    "bookmarked": "Saved"
+    "bookmarked": "Bookmarked",
+    "simulationDesc": "Simulation of an Algerian law database specialized in administrative matters."
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error"
   }
 }

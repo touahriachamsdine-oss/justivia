@@ -6,7 +6,12 @@
     "admin": "الإدارة",
     "logout": "تسجيل الخروج",
     "login": "دخول",
-    "menu": "القائمة"
+    "menu": "القائمة",
+    "search": "بحث",
+    "favorites": "المفضلة",
+    "about": "عن المنصة",
+    "terms": "الشروط",
+    "privacy": "الخصوصية"
   },
   "home": {
     "title": "جوستيفيا",
@@ -16,6 +21,26 @@
     "quickSearch": "بحث سريع:",
     "latestLaws": "أحدث القوانين في الجريدة الرسمية",
     "domainsTitle": "المجالات القانونية",
+    "trending": "شائع:",
+    "trends": {
+      "law2218": "القانون 22-18",
+      "investment": "قانون الاستثمار",
+      "familyCode": "قانون الأسرة",
+      "civilCode": "القانون المدني"
+    },
+    "stats": {
+      "laws": "نصوص قانونية",
+      "users": "مستخدم نشط",
+      "ai": "دقة ذكاء",
+      "indexedLaws": "نص قانوني مؤرشف",
+      "indexedLawsValue": "45,000+",
+      "dailyUpdates": "تحديث يومي آلي",
+      "dailyUpdatesValue": "100%",
+      "legalArticles": "مجال تخصص قانوني",
+      "legalArticlesValue": "12"
+    }
+  },
+  "domains": {
     "adminActs": "التنظيمات الإدارية",
     "adminActsDesc": "القرارات، المناشير، التنظيمات",
     "publicFinance": "المالية العامة",
@@ -24,18 +49,24 @@
     "civilRightsDesc": "القانون العام، حقوق الأفراد",
     "localGov": "الجماعات المحلية",
     "localGovDesc": "البلدية، الولاية، التسيير",
-    "trending": "شائع:",
-    "trends": {
-      "law2218": "القانون 22-18",
-      "investment": "قانون الاستثمار",
-      "familyCode": "قانون الأسرة",
-      "civilCode": "القانون المدني"
-    }
+    "civilService": "الوظيف العمومي",
+    "civilServiceDesc": "تسيير الموظفين، الحقوق والواجبات",
+    "publicContracts": "الصفقات العمومية",
+    "publicContractsDesc": "إجراءات إبرام الصفقات وتنفيذها",
+    "adminJustice": "القضاء الإداري",
+    "adminJusticeDesc": "المنازعات الإدارية، مجلس الدولة"
   },
   "search": {
+    "all": "الكل",
     "placeholder": "اسأل عن حالة قانونية...",
     "results": "نتائج البحث",
-    "noResults": "لم يتم العثور على نتائج"
+    "noResults": "لم يتم العثور على نتائج",
+    "examples": {
+      "title": "أمثلة للبحث:",
+      "family": "قانون الأسرة الجزائري والميراث",
+      "commerce": "القانون التجاري والشركات",
+      "realestate": "القانون العقاري والملكية"
+    }
   },
   "auth": {
     "login": "تسجيل الدخول",
@@ -61,6 +92,11 @@
     "indexTitle": "فهرس القوانين الجزائرية",
     "searchPlaceholder": "ابحث في القوانين المتاحة...",
     "readMore": "عرض التفاصيل",
-    "bookmarked": "تم الحفظ"
+    "bookmarked": "تم الحفظ",
+    "simulationDesc": "محاكاة لقاعدة بيانات القوانين الجزائرية المتخصصة في المادة الإدارية."
+  },
+  "common": {
+    "loading": "جاري التحميل...",
+    "error": "خطأ"
   }
 }

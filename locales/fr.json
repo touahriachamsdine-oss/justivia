@@ -1,50 +1,81 @@
 {
   "nav": {
     "home": "Accueil",
-    "chat": "Conseiller",
-    "laws": "Index Lois",
+    "chat": "Consultant AI",
+    "laws": "Index des Lois",
     "admin": "Admin",
     "logout": "Déconnexion",
     "login": "Connexion",
-    "menu": "Menu"
+    "menu": "Menu",
+    "search": "Rechercher",
+    "favorites": "Favoris",
+    "about": "À propos",
+    "terms": "Conditions",
+    "privacy": "Confidentialité"
   },
   "home": {
     "title": "Justivia",
-    "tagline": "Votre IA spécialisée en Droit Administratif Algérien",
-    "browseIndex": "Consulter l'Index Juridique Complet",
-    "searchPlaceholder": "Interrogez Justivia sur un cas juridique...",
+    "tagline": "Votre intelligence juridique spécialisée en droit administratif algérien",
+    "browseIndex": "Consulter l'index juridique complet",
+    "searchPlaceholder": "Posez une question juridique à Justivia...",
     "quickSearch": "Recherche rapide :",
-    "latestLaws": "Dernières Lois au Journal Officiel",
+    "latestLaws": "Dernières lois au Journal Officiel",
     "domainsTitle": "Domaines Juridiques",
-    "adminActs": "Actes Administratifs",
-    "adminActsDesc": "Décrets, arrêtés, circulaires",
-    "publicFinance": "Finances Publiques",
-    "publicFinanceDesc": "Budget, fiscalité, marchés",
-    "civilRights": "Droits & Libertés",
-    "civilRightsDesc": "Droit public, droits individuels",
-    "localGov": "Collectivités Locales",
-    "localGovDesc": "Commune, Wilaya, Gestion",
-    "trending": "Tendance :",
+    "trending": "Tendances :",
     "trends": {
       "law2218": "Loi 22-18",
-      "investment": "Loi Investissement",
-      "familyCode": "Code de la Famille",
-      "civilCode": "Code Civil"
+      "investment": "Loi sur l'investissement",
+      "familyCode": "Code de la famille",
+      "civilCode": "Code civil"
+    },
+    "stats": {
+      "laws": "Textes juridiques",
+      "users": "Utilisateurs actifs",
+      "ai": "Précision IA",
+      "indexedLaws": "Textes juridiques archivés",
+      "indexedLawsValue": "45,000+",
+      "dailyUpdates": "Mise à jour quotidienne",
+      "dailyUpdatesValue": "100%",
+      "legalArticles": "Domaines de spécialisation",
+      "legalArticlesValue": "12"
     }
   },
+  "domains": {
+    "adminActs": "Actes Administratifs",
+    "adminActsDesc": "Décisions, circulaires, règlements",
+    "publicFinance": "Finances Publiques",
+    "publicFinanceDesc": "Budget, fiscalité, marchés",
+    "civilRights": "Droits et Libertés",
+    "civilRightsDesc": "Droit public, droits individuels",
+    "localGov": "Collectivités Locales",
+    "localGovDesc": "Commune, Wilaya, gestion",
+    "civilService": "Fonction Publique",
+    "civilServiceDesc": "Gestion des fonctionnaires, droits et devoirs",
+    "publicContracts": "Marchés Publics",
+    "publicContractsDesc": "Procédures de passation et d'exécution",
+    "adminJustice": "Justice Administrative",
+    "adminJusticeDesc": "Contentieux administratif, Conseil d'État"
+  },
   "search": {
-    "placeholder": "Chercher un cas...",
-    "results": "Résultats",
-    "noResults": "Aucun résultat trouvé"
+    "all": "Tous",
+    "placeholder": "Rechercher un texte de loi...",
+    "results": "Résultats de recherche",
+    "noResults": "Aucun résultat trouvé",
+    "examples": {
+      "title": "Exemples de recherche :",
+      "family": "Droit de la famille algérien et héritage",
+      "commerce": "Droit commercial et sociétés",
+      "realestate": "Droit foncier et propriété"
+    }
   },
   "auth": {
-    "login": "Se Connecter",
-    "email": "Email",
+    "login": "Connexion",
+    "email": "E-mail",
     "password": "Mot de passe",
-    "submit": "Connexion",
+    "submit": "Se connecter",
     "noAccount": "Pas de compte ?",
     "register": "S'inscrire",
-    "adminLogin": "Admin"
+    "adminLogin": "Accès Admin"
   },
   "categories": {
     "all": "Tous",
@@ -55,12 +86,17 @@
     "family": "Famille",
     "labor": "Travail",
     "investment": "Investissement",
-    "realEstate": "Immobilier"
+    "realEstate": "Foncier"
   },
   "laws": {
     "indexTitle": "Index des Lois Algériennes",
-    "searchPlaceholder": "Rechercher une loi...",
-    "readMore": "Détails",
-    "bookmarked": "Enregistré"
+    "searchPlaceholder": "Rechercher dans les lois disponibles...",
+    "readMore": "Voir les détails",
+    "bookmarked": "Enregistré",
+    "simulationDesc": "Simulation d'une base de données des lois algériennes spécialisée en matière administrative."
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur"
   }
 }

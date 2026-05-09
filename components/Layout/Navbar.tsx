@@ -27,7 +27,10 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="glass-effect sticky top-0 z-[60] shadow-premium border-b border-white/5">
+    <nav 
+      dir={language === 'ar' ? 'rtl' : 'ltr'}
+      className="glass-effect sticky top-0 z-[60] shadow-premium border-b border-white/5"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           <div className="flex items-center gap-3 md:gap-4">
@@ -124,7 +127,7 @@ export function Navbar() {
       )}>
         {/* Backdrop with better blur */}
         <div 
-          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+          className="absolute inset-0 bg-black/70 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
         
@@ -132,7 +135,7 @@ export function Navbar() {
         <div 
           dir={language === 'ar' ? 'rtl' : 'ltr'}
           className={cn(
-            "absolute top-0 bottom-0 h-full w-[300px] bg-card border-x border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-out flex flex-col",
+            "absolute top-0 bottom-0 h-full w-[300px] bg-card border-x border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.8)] transition-transform duration-500 ease-in-out flex flex-col",
             language === 'ar' 
               ? (isOpen ? "left-0 translate-x-0" : "left-0 -translate-x-full")
               : (isOpen ? "right-0 translate-x-0" : "right-0 translate-x-full")

@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
 
 export function SearchBox({ className }: { className?: string }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const router = useRouter();
   const [query, setQuery] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -22,19 +22,23 @@ export function SearchBox({ className }: { className?: string }) {
   };
 
   return (
-    <form onSubmit={handleSearch} className={cn("relative max-w-3xl w-full", className)}>
+    <form 
+      dir={language === 'ar' ? 'rtl' : 'ltr'}
+      onSubmit={handleSearch} 
+      className={cn("relative max-w-3xl w-full", className)}
+    >
       <div className="relative flex items-center">
         <input
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t('home.searchPlaceholder')}
-          className="w-full bg-card shadow-premium rounded-full py-3.5 md:py-5 px-6 md:px-8 rtl:pl-16 md:rtl:pl-20 ltr:pr-16 md:ltr:pr-20 text-primary focus:outline-none focus:ring-2 focus:ring-legal-red/20 transition-all duration-500 text-base md:text-xl placeholder:text-muted font-inter"
+          className="w-full bg-card shadow-premium rounded-full py-3.5 md:py-5 px-6 md:px-8 ltr:pr-16 md:ltr:pr-20 rtl:pl-16 md:rtl:pl-20 text-primary focus:outline-none focus:ring-2 focus:ring-legal-red/20 transition-all duration-500 text-base md:text-xl placeholder:text-muted font-inter"
         />
         <button
           type="submit"
           disabled={isLoading || !query.trim()}
-          className="absolute rtl:left-2 md:rtl:left-2.5 ltr:right-2 md:ltr:right-2.5 p-3 md:p-4 bg-legal-red text-on-accent rounded-full hover:bg-legal-hover transition-all duration-500 shadow-glow disabled:opacity-50 disabled:cursor-not-allowed group"
+          className="absolute ltr:right-2 md:ltr:right-2.5 rtl:left-2 md:rtl:left-2.5 p-3 md:p-4 bg-legal-red text-on-accent rounded-full hover:bg-legal-hover transition-all duration-500 shadow-glow disabled:opacity-50 disabled:cursor-not-allowed group"
         >
           {isLoading ? (
             <Loader2 className="w-6 h-6 animate-spin" />
@@ -43,13 +47,13 @@ export function SearchBox({ className }: { className?: string }) {
           )}
         </button>
       </div>
-      <div className="mt-3 flex flex-wrap gap-2 justify-center text-sm text-muted font-bold font-inter">
-        <span className="opacity-70 uppercase tracking-tight">{t('search.examples')}:</span>
-        <button type="button" onClick={() => setQuery(t('examples.familyLaw'))} className="hover:text-legal-red transition-colors">{t('examples.familyLaw')}</button>
+      <div className="mt-4 flex flex-wrap gap-2 justify-center text-[10px] md:text-xs text-muted font-bold font-inter">
+        <span className="opacity-70 uppercase tracking-tight">{t('search.examples.title')}</span>
+        <button type="button" onClick={() => setQuery(t('search.examples.family'))} className="hover:text-legal-red transition-colors">{t('search.examples.family')}</button>
         <span className="opacity-30">•</span>
-        <button type="button" onClick={() => setQuery(t('examples.commerceCode'))} className="hover:text-legal-red transition-colors">{t('examples.commerceCode')}</button>
+        <button type="button" onClick={() => setQuery(t('search.examples.commerce'))} className="hover:text-legal-red transition-colors">{t('search.examples.commerce')}</button>
         <span className="opacity-30">•</span>
-        <button type="button" onClick={() => setQuery(t('examples.realEstate'))} className="hover:text-legal-red transition-colors">{t('examples.realEstate')}</button>
+        <button type="button" onClick={() => setQuery(t('search.examples.realestate'))} className="hover:text-legal-red transition-colors">{t('search.examples.realestate')}</button>
       </div>
     </form>
   );
