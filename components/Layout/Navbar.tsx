@@ -119,26 +119,25 @@ export function Navbar() {
 
       {/* Mobile Side Panel */}
       <div className={cn(
-        "fixed inset-0 z-[70] md:hidden transition-all duration-500",
-        isOpen ? "visible" : "invisible"
+        "fixed inset-0 z-[70] transition-opacity duration-500 md:hidden",
+        isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       )}>
-        {/* Backdrop */}
+        {/* Backdrop with better blur */}
         <div 
-          className={cn(
-            "absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity duration-500",
-            isOpen ? "opacity-100" : "opacity-0"
-          )}
+          className="absolute inset-0 bg-black/60 backdrop-blur-sm"
           onClick={() => setIsOpen(false)}
         />
         
-        {/* Panel */}
-        <div className={cn(
-          "absolute top-0 bottom-0 h-full w-[280px] bg-card shadow-2xl transition-transform duration-500 flex flex-col",
-          language === 'ar' ? "left-0" : "right-0",
-          language === 'ar' 
-            ? (isOpen ? "translate-x-0" : "-translate-x-full")
-            : (isOpen ? "translate-x-0" : "translate-x-full")
-        )}>
+        {/* Panel with improved styling */}
+        <div 
+          dir={language === 'ar' ? 'rtl' : 'ltr'}
+          className={cn(
+            "absolute top-0 bottom-0 h-full w-[300px] bg-card border-x border-white/5 shadow-[0_0_50px_rgba(0,0,0,0.5)] transition-transform duration-500 ease-out flex flex-col",
+            language === 'ar' 
+              ? (isOpen ? "left-0 translate-x-0" : "left-0 -translate-x-full")
+              : (isOpen ? "right-0 translate-x-0" : "right-0 translate-x-full")
+          )}
+        >
           <div className="p-6 border-b border-white/5 flex items-center justify-between">
             <span className="font-cairo text-xl font-black text-primary uppercase">{t('nav.menu')}</span>
             <button 
@@ -182,15 +181,16 @@ export function Navbar() {
                 </Link>
               )}
 
-              {status === 'authenticated' ? (
+              {status === 'authenticated' && (
                 <button 
                   onClick={() => { signOut({ callbackUrl: '/' }); setIsOpen(false); }}
-                  className="flex items-center justify-center gap-2 w-full py-4 bg-soft text-primary font-black rounded-2xl uppercase text-sm"
+                  className="w-full flex items-center gap-4 px-4 py-3 rounded-xl text-text-secondary hover:text-legal-red hover:bg-legal-red/5 transition-all"
                 >
                   <LogOut className="w-5 h-5" />
-                  {t('nav.logout')}
+                  <span className="font-medium">{t('nav.logout')}</span>
                 </button>
-              ) : (
+              )}
+              {!session && (
                 <Link href="/login" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 bg-legal-red text-white font-black rounded-2xl shadow-legal uppercase text-sm">
                   <User className="w-5 h-5" />
                   {t('nav.login')}

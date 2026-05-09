@@ -140,7 +140,7 @@ export default function Home() {
               className="px-6 md:px-10 py-3 md:py-4 rounded-2xl bg-legal-red text-on-accent hover:bg-legal-hover transition-all duration-500 font-black uppercase tracking-[0.15em] md:tracking-[0.2em] flex items-center gap-2 md:gap-3 group shadow-2xl shadow-legal-red/30 hover:shadow-legal-red/50 animate-reveal text-sm md:text-base"
             >
               <BookOpen className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
-              تصفح الفهرس القانوني الشامل
+              {t('home.browseIndex')}
             </button>
           </motion.div>
         </motion.div>
