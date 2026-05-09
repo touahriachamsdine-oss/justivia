@@ -80,7 +80,7 @@ export default function LawIndexPage() {
   });
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 w-full">
       <div className="text-center mb-12">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -90,10 +90,10 @@ export default function LawIndexPage() {
           <BookOpen className="w-4 h-4" />
           {t('nav.laws')}
         </motion.div>
-        <h1 className="text-4xl md:text-5xl font-cairo font-black text-primary mb-4 uppercase">
+        <h1 className="text-3xl md:text-5xl font-cairo font-black text-primary mb-3 md:mb-4 uppercase tracking-tight">
           {t('laws.indexTitle')}
         </h1>
-        <p className="text-secondary max-w-2xl mx-auto font-inter">
+        <p className="text-sm md:text-base text-secondary max-w-2xl mx-auto font-inter px-4">
           {t('law.simulationDesc')}
         </p>
       </div>
@@ -101,25 +101,25 @@ export default function LawIndexPage() {
       {/* Filter & Search Bar */}
       <div className="mb-12 space-y-6">
         <div className="relative max-w-2xl mx-auto group">
-          <div className="absolute inset-y-0 ltr:left-6 rtl:right-6 flex items-center pointer-events-none">
-            <Search className="w-5 h-5 text-muted group-focus-within:text-legal-red transition-colors" />
+          <div className="absolute inset-y-0 ltr:left-5 md:ltr:left-6 rtl:right-5 md:rtl:right-6 flex items-center pointer-events-none">
+            <Search className="w-4 h-4 md:w-5 md:h-5 text-muted group-focus-within:text-legal-red transition-colors" />
           </div>
           <input
             type="text"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder={t('laws.searchPlaceholder')}
-            className="w-full bg-card shadow-premium rounded-2xl py-5 ltr:pl-16 rtl:pr-16 px-8 text-primary focus:outline-none focus:ring-0 transition-all duration-500 text-lg placeholder:text-muted/50 font-inter border-none"
+            className="w-full bg-card shadow-premium rounded-2xl py-4 md:py-5 ltr:pl-12 md:ltr:pl-16 rtl:pr-12 md:rtl:pr-16 px-6 md:px-8 text-sm md:text-lg text-primary focus:outline-none focus:ring-0 transition-all duration-500 placeholder:text-muted/50 font-inter border-none"
           />
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-3">
           {categories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               className={cn(
-                "px-6 py-2.5 rounded-xl text-[10px] font-black transition-all duration-500 uppercase tracking-widest",
+                "px-4 md:px-6 py-2 md:py-2.5 rounded-xl text-[9px] md:text-[10px] font-black transition-all duration-500 uppercase tracking-widest",
                 selectedCategory === category.id
                   ? "bg-legal-red text-on-accent shadow-glow"
                   : "bg-card text-secondary shadow-premium hover:shadow-glow hover:text-legal-red"
@@ -149,13 +149,13 @@ export default function LawIndexPage() {
             if (categoryLaws.length === 0) return null;
 
             return (
-              <div key={category.id} className="space-y-10 animate-reveal">
-                <div className="flex items-center gap-6">
-                  <h2 className="text-2xl font-cairo font-black text-legal-red shrink-0 uppercase tracking-[0.2em]">
+              <div key={category.id} className="space-y-6 md:space-y-10 animate-reveal">
+                <div className="flex items-center gap-4 md:gap-6">
+                  <h2 className="text-xl md:text-2xl font-cairo font-black text-legal-red shrink-0 uppercase tracking-[0.2em]">
                     {category.name}
                   </h2>
                   <div className="h-0.5 flex-1 bg-gradient-to-r from-legal-red/20 via-legal-red/5 to-transparent" />
-                  <span className="text-[10px] font-black text-secondary px-4 py-2 rounded-xl bg-card shadow-premium uppercase tracking-[0.2em]">
+                  <span className="text-[9px] md:text-[10px] font-black text-secondary px-3 md:py-2 py-1.5 rounded-xl bg-card shadow-premium uppercase tracking-[0.2em]">
                     {categoryLaws.length}
                   </span>
                 </div>

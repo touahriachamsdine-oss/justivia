@@ -29,17 +29,17 @@ export function SearchBox({ className }: { className?: string }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={t('home.searchPlaceholder')}
-          className="w-full bg-card shadow-premium rounded-full py-5 px-8 rtl:pl-20 ltr:pr-20 text-primary focus:outline-none focus:ring-2 focus:ring-legal-red/20 transition-all duration-500 text-xl placeholder:text-muted font-inter"
+          className="w-full bg-card shadow-premium rounded-full py-3.5 md:py-5 px-6 md:px-8 rtl:pl-16 md:rtl:pl-20 ltr:pr-16 md:ltr:pr-20 text-primary focus:outline-none focus:ring-2 focus:ring-legal-red/20 transition-all duration-500 text-base md:text-xl placeholder:text-muted font-inter"
         />
         <button
           type="submit"
           disabled={isLoading || !query.trim()}
-          className="absolute rtl:left-2.5 ltr:right-2.5 p-4 bg-legal-red text-on-accent rounded-full hover:bg-legal-hover transition-all duration-500 shadow-glow disabled:opacity-50 disabled:cursor-not-allowed group"
+          className="absolute rtl:left-2 md:rtl:left-2.5 ltr:right-2 md:ltr:right-2.5 p-3 md:p-4 bg-legal-red text-on-accent rounded-full hover:bg-legal-hover transition-all duration-500 shadow-glow disabled:opacity-50 disabled:cursor-not-allowed group"
         >
           {isLoading ? (
             <Loader2 className="w-6 h-6 animate-spin" />
           ) : (
-            <Search className="w-6 h-6 group-hover:scale-110 transition-transform" />
+            <Search className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
           )}
         </button>
       </div>

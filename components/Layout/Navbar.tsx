@@ -4,34 +4,56 @@ import Link from 'next/link';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { ThemeSwitcher } from './ThemeSwitcher';
-import { Scale, LogOut, LayoutDashboard, Heart, User, Bot } from 'lucide-react';
+import { Scale, LogOut, LayoutDashboard, Heart, User, Bot, Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { useSession, signOut } from "next-auth/react";
 
 export function Navbar() {
   const { t, language } = useLanguage();
   const { data: session, status } = useSession();
+  const [isOpen, setIsOpen] = useState(false);
   const isAdmin = (session?.user as any)?.role === 'admin';
   const isLoading = status === 'loading';
 
+  // Prevent scroll when menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [isOpen]);
+
   return (
-    <nav className="glass-effect sticky top-0 z-50 shadow-premium border-b border-white/5">
+    <nav className="glass-effect sticky top-0 z-[60] shadow-premium border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-3 group">
-              <div className="p-2.5 bg-accent-bg rounded-xl shadow-soft group-hover:bg-legal-red/10 transition-all duration-500 group-hover:scale-110 border border-white/5">
-                <Scale className="w-6 h-6 text-legal-red" />
+        <div className="flex items-center justify-between h-16 md:h-20">
+          <div className="flex items-center gap-3 md:gap-4">
+            <Link href="/" className="flex items-center gap-2 md:gap-3 group" onClick={() => setIsOpen(false)}>
+              <div className="p-2 md:p-2.5 bg-accent-bg rounded-xl shadow-soft group-hover:bg-legal-red/10 transition-all duration-500 group-hover:scale-110 border border-white/5">
+                <Scale className="w-5 h-5 md:w-6 md:h-6 text-legal-red" />
               </div>
               <div className="flex flex-col">
-                <span className="font-cairo text-2xl font-black tracking-tighter text-primary uppercase leading-none">
+                <span className="font-cairo text-lg md:text-2xl font-black tracking-tighter text-primary uppercase leading-none">
                   JUSTIVIA
                 </span>
-                <span className="text-[10px] font-bold text-legal-red tracking-[0.2em] mt-1 opacity-80 uppercase leading-none">
+                <span className="text-[8px] md:text-[10px] font-bold text-legal-red tracking-[0.2em] mt-0.5 md:mt-1 opacity-80 uppercase leading-none">
                   Algeria
                 </span>
               </div>
             </Link>
+          </div>
+
+          <div className="flex items-center md:hidden gap-3">
+            <ThemeSwitcher />
+            <button 
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 bg-soft text-primary rounded-xl shadow-premium border border-white/5"
+            >
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -91,6 +113,93 @@ export function Navbar() {
                 <LanguageSwitcher />
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Side Panel */}
+      <div className={cn(
+        "fixed inset-0 z-[70] md:hidden transition-all duration-500",
+        isOpen ? "visible" : "invisible"
+      )}>
+        {/* Backdrop */}
+        <div 
+          className={cn(
+            "absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-500",
+            isOpen ? "opacity-100" : "opacity-0"
+          )}
+          onClick={() => setIsOpen(false)}
+        />
+        
+        {/* Panel */}
+        <div className={cn(
+          "absolute right-0 top-0 h-full w-[280px] bg-card shadow-2xl transition-transform duration-500 flex flex-col",
+          isOpen ? "translate-x-0" : "translate-x-full",
+          language === 'ar' && "right-auto left-0 translate-x-0",
+          language === 'ar' && !isOpen && "-translate-x-full"
+        )}>
+          <div className="p-6 border-b border-white/5 flex items-center justify-between">
+            <span className="font-cairo text-xl font-black text-primary uppercase">Menu</span>
+            <button 
+              onClick={() => setIsOpen(false)}
+              className="p-2 bg-soft text-muted rounded-lg"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          </div>
+
+          <div className="flex-grow overflow-y-auto p-6 space-y-4">
+            <Link 
+              href="/chat" 
+              onClick={() => setIsOpen(false)}
+              className="flex items-center gap-4 p-4 rounded-2xl bg-accent-bg border border-legal-red/10 text-primary font-black uppercase text-sm"
+            >
+              <div className="p-2 bg-legal-red rounded-xl text-white">
+                <Bot className="w-5 h-5" />
+              </div>
+              {t('nav.chat')}
+            </Link>
+
+            <div className="space-y-1">
+              <Link href="/search" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
+                {t('nav.search')}
+              </Link>
+              <Link href="/laws" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
+                {t('nav.laws')}
+              </Link>
+              <Link href="/favorites" onClick={() => setIsOpen(false)} className="flex items-center gap-4 p-4 text-muted font-black uppercase text-xs hover:bg-soft rounded-xl transition-colors">
+                <Heart className="w-4 h-4" />
+                {t('nav.favorites')}
+              </Link>
+            </div>
+
+            <div className="pt-4 border-t border-white/5 space-y-4">
+              {isAdmin && (
+                <Link href="/admin" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 bg-legal-red text-white font-black rounded-2xl shadow-legal uppercase text-sm">
+                  <LayoutDashboard className="w-5 h-5" />
+                  {t('nav.admin')}
+                </Link>
+              )}
+
+              {status === 'authenticated' ? (
+                <button 
+                  onClick={() => { signOut({ callbackUrl: '/' }); setIsOpen(false); }}
+                  className="flex items-center justify-center gap-2 w-full py-4 bg-soft text-primary font-black rounded-2xl uppercase text-sm"
+                >
+                  <LogOut className="w-5 h-5" />
+                  {t('nav.logout')}
+                </button>
+              ) : (
+                <Link href="/login" onClick={() => setIsOpen(false)} className="flex items-center justify-center gap-2 w-full py-4 bg-legal-red text-white font-black rounded-2xl shadow-legal uppercase text-sm">
+                  <User className="w-5 h-5" />
+                  {t('nav.login')}
+                </Link>
+              )}
+            </div>
+          </div>
+
+          <div className="p-6 border-t border-white/5 flex items-center justify-center gap-6">
+            <LanguageSwitcher />
           </div>
         </div>
       </div>

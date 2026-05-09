@@ -88,11 +88,11 @@ export default function Home() {
             {t('home.quickSearch')}
           </div>
           
-          <h1 className="font-cairo text-5xl md:text-7xl lg:text-8xl font-black text-primary mb-6 tracking-tighter drop-shadow-sm leading-none uppercase">
+          <h1 className="font-cairo text-4xl md:text-7xl lg:text-8xl font-black text-primary mb-4 md:mb-6 tracking-tighter drop-shadow-sm leading-none uppercase">
             {t('home.title')}{' '}
           </h1>
           
-          <p className="text-xl md:text-2xl text-secondary max-w-2xl mx-auto font-inter font-normal leading-relaxed">
+          <p className="text-lg md:text-2xl text-secondary max-w-2xl mx-auto font-inter font-normal leading-relaxed px-2">
             {t('home.tagline')}
           </p>
         </motion.div>
@@ -137,9 +137,9 @@ export default function Home() {
           >
             <button 
               onClick={() => router.push('/laws')}
-              className="px-10 py-4 rounded-2xl bg-legal-red text-on-accent hover:bg-legal-hover transition-all duration-500 font-black uppercase tracking-[0.2em] flex items-center gap-3 group shadow-2xl shadow-legal-red/30 hover:shadow-legal-red/50 animate-reveal"
+              className="px-6 md:px-10 py-3 md:py-4 rounded-2xl bg-legal-red text-on-accent hover:bg-legal-hover transition-all duration-500 font-black uppercase tracking-[0.15em] md:tracking-[0.2em] flex items-center gap-2 md:gap-3 group shadow-2xl shadow-legal-red/30 hover:shadow-legal-red/50 animate-reveal text-sm md:text-base"
             >
-              <BookOpen className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <BookOpen className="w-4 h-4 md:w-5 md:h-5 group-hover:scale-110 transition-transform" />
               تصفح الفهرس القانوني الشامل
             </button>
           </motion.div>
@@ -159,18 +159,18 @@ export default function Home() {
                 key={idx}
                 variants={itemVariants}
                 whileHover={{ y: -8, scale: 1.02 }}
-                className="group relative p-10 rounded-3xl bg-card shadow-premium hover:shadow-card-hover transition-all duration-500 text-center overflow-hidden"
+                className="group relative p-6 md:p-10 rounded-3xl bg-card shadow-premium hover:shadow-card-hover transition-all duration-500 text-center overflow-hidden"
               >
                 <div className="absolute top-0 left-0 w-full h-1.5 bg-transparent group-hover:bg-legal-red transition-all duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-soft opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 
-                <div className="w-20 h-20 mx-auto bg-soft rounded-2xl flex items-center justify-center mb-8 group-hover:bg-legal-red/5 transition-all duration-500 relative z-10 shadow-premium group-hover:shadow-glow">
-                  <Icon className="w-10 h-10 text-legal-red transition-transform duration-500 group-hover:scale-110" />
+                <div className="w-16 h-16 md:w-20 md:h-20 mx-auto bg-soft rounded-2xl flex items-center justify-center mb-6 md:mb-8 group-hover:bg-legal-red/5 transition-all duration-500 relative z-10 shadow-premium group-hover:shadow-glow">
+                  <Icon className="w-8 h-8 md:w-10 md:h-10 text-legal-red transition-transform duration-500 group-hover:scale-110" />
                 </div>
-                <h3 className="font-cairo text-2xl font-black text-primary mb-4 group-hover:text-legal-red transition-colors relative z-10 uppercase tracking-tight">
+                <h3 className="font-cairo text-xl md:text-2xl font-black text-primary mb-3 md:mb-4 group-hover:text-legal-red transition-colors relative z-10 uppercase tracking-tight">
                   {t(`domains.${domain.title}`)}
                 </h3>
-                <p className="text-secondary relative z-10 font-inter leading-relaxed text-sm">
+                <p className="text-secondary relative z-10 font-inter leading-relaxed text-xs md:text-sm">
                   {t(`domains.${domain.title}Desc`)}
                 </p>
               </motion.div>
@@ -188,12 +188,12 @@ export default function Home() {
           {stats.map((stat, idx) => {
             const StatIcon = stat.icon;
             return (
-              <div key={idx} className="flex flex-col items-center justify-center p-8 relative animate-reveal shadow-premium rounded-3xl bg-card/50 backdrop-blur-sm" style={{ animationDelay: `${(idx + 1) * 200}ms` }}>
-                <div className="flex items-center gap-4 mb-4">
-                  <StatIcon className="w-6 h-6 text-legal-red" />
-                  <span className="text-5xl font-cairo font-black text-primary drop-shadow-md tracking-tighter">{stat.value}</span>
+              <div key={idx} className="flex flex-col items-center justify-center p-6 md:p-8 relative animate-reveal shadow-premium rounded-3xl bg-card/50 backdrop-blur-sm" style={{ animationDelay: `${(idx + 1) * 200}ms` }}>
+                <div className="flex items-center gap-3 md:gap-4 mb-2 md:mb-4">
+                  <StatIcon className="w-5 h-5 md:w-6 md:h-6 text-legal-red" />
+                  <span className="text-4xl md:text-5xl font-cairo font-black text-primary drop-shadow-md tracking-tighter">{stat.value}</span>
                 </div>
-                <span className="text-[10px] font-black text-muted uppercase tracking-[0.3em] text-center">
+                <span className="text-[8px] md:text-[10px] font-black text-muted uppercase tracking-[0.2em] md:tracking-[0.3em] text-center">
                   {t(`home.stats.${stat.label}`)}
                 </span>
               </div>

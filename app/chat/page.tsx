@@ -92,7 +92,7 @@ function ChatContent() {
       <FloatingBackground />
       
       {/* Chat Header */}
-      <div className="glass-effect p-4 shadow-premium flex items-center justify-between z-10">
+      <div className="glass-effect p-3 md:p-4 shadow-premium flex items-center justify-between z-10">
         <div className="flex items-center gap-3">
           <button 
             onClick={() => router.push('/')}
@@ -100,13 +100,13 @@ function ChatContent() {
           >
             <ArrowLeft className="w-5 h-5 rtl:rotate-180" />
           </button>
-          <div className="flex items-center gap-2">
-            <div className="p-2 bg-legal-red/10 rounded-lg">
-              <Scale className="w-5 h-5 text-legal-red" />
+          <div className="flex items-center gap-2 md:gap-2">
+            <div className="p-1.5 md:p-2 bg-legal-red/10 rounded-lg">
+              <Scale className="w-4 h-4 md:w-5 md:h-5 text-legal-red" />
             </div>
             <div>
-              <h1 className="font-cairo font-black text-primary text-sm uppercase tracking-widest">JUSTIVIA AI</h1>
-              <p className="text-[10px] text-legal-red font-bold uppercase tracking-tighter opacity-70">Specialized in Administrative Law</p>
+              <h1 className="font-cairo font-black text-primary text-[10px] md:text-sm uppercase tracking-widest">JUSTIVIA AI</h1>
+              <p className="text-[8px] md:text-[10px] text-legal-red font-bold uppercase tracking-tighter opacity-70">Specialized in Administrative Law</p>
             </div>
           </div>
         </div>
@@ -181,10 +181,10 @@ function ChatContent() {
                 </div>
                 
                 <div className={cn(
-                  "max-w-[85%] rounded-3xl p-6 shadow-premium transition-all leading-relaxed",
+                  "max-w-[90%] md:max-w-[85%] rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-premium transition-all leading-relaxed",
                   msg.role === 'user' 
                     ? "bg-card text-primary rounded-tr-none" 
-                    : "bg-soft/50 text-primary rounded-tl-none"
+                    : "bg-card text-primary rounded-tl-none border-l-4 border-legal-red/30"
                 )}>
                   <div className="prose prose-sm dark:prose-invert max-w-none font-inter text-base">
                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
@@ -217,31 +217,31 @@ function ChatContent() {
       </div>
 
       {/* Input Area */}
-      <div className="p-6 glass-effect z-10">
+      <div className="p-4 md:p-6 glass-effect z-10">
         <form 
           onSubmit={(e) => { e.preventDefault(); handleSendMessage(); }}
           className="max-w-4xl mx-auto relative flex items-center gap-3"
         >
           <div className="relative flex-grow">
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder={language === 'ar' ? 'اطرح سؤالك القانوني هنا...' : 'Ask your legal question here...'}
-              className="w-full bg-card shadow-premium rounded-2xl py-5 px-6 rtl:pl-16 ltr:pr-16 text-primary focus:outline-none focus:ring-2 focus:ring-legal-red/20 transition-all duration-500 font-inter placeholder:text-muted/50"
-              disabled={isLoading}
-            />
-            <button
-              type="submit"
-              disabled={isLoading || !input.trim()}
-              className="absolute rtl:left-2 ltr:right-2 top-1/2 -translate-y-1/2 p-3 bg-legal-red text-on-accent rounded-xl hover:bg-legal-hover transition-all duration-500 shadow-glow disabled:opacity-30 disabled:cursor-not-allowed group"
-            >
-              {isLoading ? (
-                <Loader2 className="w-5 h-5 animate-spin" />
-              ) : (
-                <Send className="w-5 h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              )}
-            </button>
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder={language === 'ar' ? 'اطرح سؤالك القانوني هنا...' : 'Ask your legal question here...'}
+                className="w-full bg-card shadow-premium rounded-2xl py-3.5 md:py-5 px-5 md:px-6 rtl:pl-14 md:rtl:pl-16 ltr:pr-14 md:ltr:pr-16 text-sm md:text-base text-primary focus:outline-none focus:ring-2 focus:ring-legal-red/20 transition-all duration-500 font-inter placeholder:text-muted/50"
+                disabled={isLoading}
+              />
+              <button
+                type="submit"
+                disabled={isLoading || !input.trim()}
+                className="absolute rtl:left-1.5 md:rtl:left-2 ltr:right-1.5 md:ltr:right-2 top-1/2 -translate-y-1/2 p-2.5 md:p-3 bg-legal-red text-on-accent rounded-xl hover:bg-legal-hover transition-all duration-500 shadow-glow disabled:opacity-30 disabled:cursor-not-allowed group"
+              >
+                {isLoading ? (
+                  <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
+                ) : (
+                  <Send className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                )}
+              </button>
           </div>
         </form>
         <p className="text-[10px] text-center mt-3 text-muted font-bold uppercase tracking-widest opacity-40">
