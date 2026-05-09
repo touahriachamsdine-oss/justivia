@@ -1,9 +1,9 @@
 import Groq from 'groq-sdk';
-import * as dotenv from 'dotenv';
-dotenv.config({ path: '.env.local' });
 
+// We use a fallback during build time to prevent crashes on Vercel if the key isn't provided during static analysis.
+// Real API key must be provided in the Vercel Dashboard for runtime functionality.
 const groq = new Groq({
-  apiKey: process.env.GROQ_API_KEY,
+  apiKey: process.env.GROQ_API_KEY || 'missing_key_check_vercel_env',
 });
 
 export default groq;

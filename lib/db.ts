@@ -5,7 +5,15 @@ import ws from 'ws';
 neonConfig.webSocketConstructor = ws;
 
 // Initialize the neon client with the database connection string
-const pool = new Pool({ connectionString: process.env.DATABASE_URL! });
+const connectionString = process.env.DATABASE_URL;
+
+if (!connectionString && process.env.NODE_ENV === 'production') {
+  console.warn('DATABASE_URL is missing in production environment!');
+}
+
+const pool = new Pool({ 
+  connectionString: connectionString || 'postgresql://dummy:password@localhost:5432/dummy' 
+});
 
 /**
  * Executes a query against the Neon PostgreSQL database.
