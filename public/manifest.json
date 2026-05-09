@@ -1,0 +1,24 @@
+{
+  "name": "JUSTIVIA — جوستيفيا",
+  "short_name": "جوستيفيا",
+  "description": "القانون الجزائري في متناول الجميع | Droit algérien pour tous",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0E1A",
+  "theme_color": "#C9A84C",
+  "lang": "ar",
+  "dir": "rtl",
+  "orientation": "any",
+  "icons": [
+    { "src": "/icons/icon-72.png",  "sizes": "72x72",   "type": "image/png" },
+    { "src": "/icons/icon-96.png",  "sizes": "96x96",   "type": "image/png" },
+    { "src": "/icons/icon-128.png", "sizes": "128x128", "type": "image/png" },
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ],
+  "shortcuts": [
+    { "name": "بحث في القوانين", "url": "/search", "description": "ابحث في القانون الجزائري" },
+    { "name": "فهرس القوانين",   "url": "/laws",   "description": "تصفّح جميع القوانين" }
+  ],
+  "categories": ["education", "productivity", "government"]
+}

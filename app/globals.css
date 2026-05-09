@@ -2,26 +2,93 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Backgrounds */
+    --bg-app:         #FFFFFF;
+    --bg-card:        #FCFCFC;
+    --bg-soft:        #F5F5F5;
+    --bg-accent:      rgba(196, 30, 42, 0.05); /* Crimson 5% opacity */
+    
+    /* Text */
+    --text-primary:   #121212; /* Deep Black */
+    --text-secondary: #404040;
+    --text-muted:     #737373;
+    --text-on-accent: #FFFFFF;
+    
+    /* Accents */
+    --accent-legal:   #C41E2A; /* Crimson Red */
+    --accent-hover:   #9B1B24;
+    
+    /* Borders (Borderless Design) */
+    --border-subtle:  transparent;
+    --border-default: transparent;
+    --border-strong:  transparent;
+    
+    /* System Status */
+    --status-error:   #DC2626;
+    --status-success: #059669;
+    --status-warning: #D97706;
+
+    /* Legacy compatibility */
+    --gold:           var(--accent-legal);
+    --cream:          var(--text-primary);
+  }
+
+  [data-theme='dark'], [data-theme='night'], .dark {
+    /* Backgrounds */
+    --bg-app:         #0A0A0A; /* Pure Black */
+    --bg-card:        #141414; /* Darker Surface */
+    --bg-soft:        #1F1F1F;
+    --bg-accent:      rgba(231, 76, 60, 0.1); /* Brighter Red 10% opacity */
+    
+    /* Text */
+    --text-primary:   #FFFFFF; /* White */
+    --text-secondary: #D4D4D4;
+    --text-muted:     #A3A3A3;
+    --text-on-accent: #FFFFFF;
+    
+    /* Accents */
+    --accent-legal:   #E74C3C; /* Brighter Crimson for dark mode */
+    --accent-hover:   #C0392B;
+    
+    /* Borders (Borderless Design) */
+    --border-subtle:  transparent;
+    --border-default: transparent;
+    --border-strong:  transparent;
+  }
+
+  body {
+    background-color: var(--bg-app);
+    color: var(--text-primary);
+    transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .glass-effect {
+    @apply backdrop-blur-md bg-opacity-70;
+    background-color: var(--bg-card);
+  }
+  
+  .reveal-item {
+    @apply opacity-0 animate-reveal;
+  }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--gold);
+    border-radius: 10px;
+    opacity: 0.5;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-light);
   }
 }
