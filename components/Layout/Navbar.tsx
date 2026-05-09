@@ -29,7 +29,7 @@ export function Navbar() {
   return (
     <nav 
       dir={language === 'ar' ? 'rtl' : 'ltr'}
-      className="glass-effect sticky top-0 z-[60] shadow-premium border-b border-white/5"
+      className="glass-effect sticky top-0 z-[9990] shadow-premium border-b border-white/5"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
@@ -122,7 +122,7 @@ export function Navbar() {
 
       {/* Mobile Side Panel */}
       <div className={cn(
-        "fixed inset-0 z-[70] transition-opacity duration-500 md:hidden",
+        "fixed inset-0 z-[9999] transition-opacity duration-500 md:hidden",
         isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
       )}>
         {/* Backdrop with better blur */}
