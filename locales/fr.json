@@ -98,5 +98,40 @@
   "common": {
     "loading": "Chargement...",
     "error": "Erreur"
+  },
+  "about": {
+    "title": "À propos & Remerciements",
+    "subtitle": "Projet de fin d'études Justivia - Intelligence Juridique Administrative Algérienne",
+    "description": "Cette plateforme a été développée en tant qu'outil avancé d'intelligence artificielle juridique, spécialisé dans l'analyse et l'interprétation des lois et règlements administratifs algériens afin de faciliter l'accès à l'information juridique pour les chercheurs et praticiens du droit.",
+    "creatorLabel": "Préparé par l'étudiant chercheur :",
+    "creator": "Hamdan Sofiane Djellab El Hadi",
+    "supervisorLabel": "Sous la direction du Dr :",
+    "supervisor": "Misbahia Nadia",
+    "university": "Université Larbi Tebessi - Tébessa",
+    "faculty": "Faculté de Droit",
+    "acknowledgment": "Remerciements",
+    "acknowledgmentText": "Avec toute notre gratitude et notre reconnaissance, nous adressons nos sincères remerciements et notre estime au Dr. Misbahia Nadia pour sa supervision attentive et ses conseils précieux, qui ont été notre guide tout au long de notre parcours de recherche. Nous remercions également nos chères familles et tous ceux qui nous ont soutenus et encouragés à mener à bien cet humble travail."
+  },
+  "terms": {
+    "title": "Conditions d'utilisation & Services",
+    "subtitle": "Règles régissant l'utilisation de la plateforme d'intelligence juridique Justivia",
+    "intro": "Votre utilisation de la plateforme Justivia est régie par ces conditions générales. En naviguant sur la plateforme ou en utilisant le consultant IA, vous acceptez de vous conformer pleinement à ces termes.",
+    "section1Title": "1. Nature du service",
+    "section1Text": "Justivia est une plateforme d'IA interactive visant à simuler et interpréter les textes juridiques algériens. Les réponses fournies par le consultant virtuel sont à titre indicatif et éducatif uniquement et ne constituent pas un conseil juridique officiel remplaçant un avocat ou un juge.",
+    "section2Title": "2. Responsabilité juridique",
+    "section2Text": "Nous déployons tous nos efforts pour assurer l'exactitude et la mise à jour des textes juridiques et des réponses générées par le système. Cependant, la plateforme et ses développeurs déclinent toute responsabilité quant aux décisions prises sur la base des résultats de l'IA sans consulter le Journal Officiel.",
+    "section3Title": "3. Conditions d'utilisation acceptable",
+    "section3Text": "Il est interdit d'utiliser la plateforme pour générer du contenu offensant, lancer des cyberattaques ou extraire des données de manière excessive au détriment de l'infrastructure. La plateforme se réserve le droit de bannir tout compte enfreignant ces conditions."
+  },
+  "privacy": {
+    "title": "Politique de confidentialité",
+    "subtitle": "Comment nous protégeons vos données personnelles et vos interactions",
+    "intro": "Chez Justivia, nous nous engageons à respecter les niveaux de confidentialité et de vie privée les plus élevés pour les données de nos utilisateurs, conformément aux réglementations applicables.",
+    "section1Title": "1. Données que nous collectons",
+    "section1Text": "Nous collectons les données d'inscription de base (nom et e-mail) pour améliorer votre expérience, permettre la sauvegarde des lois favorites et stocker l'historique des conversations juridiques.",
+    "section2Title": "2. Confidentiality of Conversations",
+    "section2Text": "Toutes les conversations et consultations adressées au consultant IA sont entièrement cryptées et strictement confidentielles. Le contenu de vos requêtes n'est partagé avec aucun tiers et sert uniquement à améliorer la précision du modèle localement.",
+    "section3Title": "3. Droits des utilisateurs",
+    "section3Text": "Vous dispose en tout temps du droit de modifier vos données personnelles ou de supprimer définitivement votre compte, entraînant l'effacement immédiat de tout l'historique de recherche et des conversations de nos serveurs."
   }
 }

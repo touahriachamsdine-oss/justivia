@@ -1,6 +1,7 @@
 'use client';
 
 import { useLanguage } from '@/contexts/LanguageContext';
+import Link from 'next/link';
 
 export function Footer() {
   const { t } = useLanguage();
@@ -17,9 +18,9 @@ export function Footer() {
           </div>
           
           <div className="flex items-center gap-10 text-[10px] font-black text-secondary uppercase tracking-[0.2em]">
-            <a href="#" className="hover:text-legal-red transition-all duration-300 hover:tracking-[0.3em]">{t('nav.about')}</a>
-            <a href="#" className="hover:text-legal-red transition-all duration-300 hover:tracking-[0.3em]">{t('nav.terms')}</a>
-            <a href="#" className="hover:text-legal-red transition-all duration-300 hover:tracking-[0.3em]">{t('nav.privacy')}</a>
+            <Link href="/about" className="hover:text-legal-red transition-all duration-300 hover:tracking-[0.3em]">{t('nav.about')}</Link>
+            <Link href="/terms" className="hover:text-legal-red transition-all duration-300 hover:tracking-[0.3em]">{t('nav.terms')}</Link>
+            <Link href="/privacy" className="hover:text-legal-red transition-all duration-300 hover:tracking-[0.3em]">{t('nav.privacy')}</Link>
           </div>
         </div>
       </div>
