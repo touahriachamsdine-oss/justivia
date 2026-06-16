@@ -79,24 +79,49 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Cards for student and supervisor */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Student card */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Student 1 card */}
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -6, scale: 1.01 }}
-              className="p-8 rounded-3xl bg-card shadow-premium border border-white/5 text-center relative group transition-all duration-500"
+              className="p-6 rounded-3xl bg-card shadow-premium border border-white/5 text-center relative group transition-all duration-500 flex flex-col justify-between"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-legal-red transition-all duration-500" />
-              <div className="w-16 h-16 mx-auto bg-soft rounded-2xl flex items-center justify-center mb-6 shadow-premium group-hover:shadow-glow transition-all duration-500">
-                <User className="w-8 h-8 text-legal-red" />
+              <div>
+                <div className="w-16 h-16 mx-auto bg-soft rounded-2xl flex items-center justify-center mb-6 shadow-premium group-hover:shadow-glow transition-all duration-500">
+                  <User className="w-8 h-8 text-legal-red" />
+                </div>
+                <span className="text-[10px] font-black text-muted uppercase tracking-[0.2em] block mb-2">
+                  {t('about.creatorLabel')}
+                </span>
+                <h3 className="font-cairo text-xl font-black text-primary mb-3">
+                  {t('about.creator1')}
+                </h3>
               </div>
-              <span className="text-[10px] font-black text-muted uppercase tracking-[0.2em] block mb-2">
-                {t('about.creatorLabel')}
-              </span>
-              <h3 className="font-cairo text-2xl font-black text-primary mb-3">
-                {t('about.creator')}
-              </h3>
-              <p className="text-xs text-muted">
+              <p className="text-xs text-muted mt-auto">
+                {t('about.faculty')}
+              </p>
+            </motion.div>
+
+            {/* Student 2 card */}
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ y: -6, scale: 1.01 }}
+              className="p-6 rounded-3xl bg-card shadow-premium border border-white/5 text-center relative group transition-all duration-500 flex flex-col justify-between"
+            >
+              <div className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-legal-red transition-all duration-500" />
+              <div>
+                <div className="w-16 h-16 mx-auto bg-soft rounded-2xl flex items-center justify-center mb-6 shadow-premium group-hover:shadow-glow transition-all duration-500">
+                  <User className="w-8 h-8 text-legal-red" />
+                </div>
+                <span className="text-[10px] font-black text-muted uppercase tracking-[0.2em] block mb-2">
+                  {t('about.creatorLabel')}
+                </span>
+                <h3 className="font-cairo text-xl font-black text-primary mb-3">
+                  {t('about.creator2')}
+                </h3>
+              </div>
+              <p className="text-xs text-muted mt-auto">
                 {t('about.faculty')}
               </p>
             </motion.div>
@@ -105,19 +130,21 @@ export default function AboutPage() {
             <motion.div 
               variants={itemVariants}
               whileHover={{ y: -6, scale: 1.01 }}
-              className="p-8 rounded-3xl bg-card shadow-premium border border-white/5 text-center relative group transition-all duration-500"
+              className="p-6 rounded-3xl bg-card shadow-premium border border-white/5 text-center relative group transition-all duration-500 flex flex-col justify-between"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-transparent group-hover:bg-legal-red transition-all duration-500" />
-              <div className="w-16 h-16 mx-auto bg-soft rounded-2xl flex items-center justify-center mb-6 shadow-premium group-hover:shadow-glow transition-all duration-500">
-                <Users className="w-8 h-8 text-legal-red" />
+              <div>
+                <div className="w-16 h-16 mx-auto bg-soft rounded-2xl flex items-center justify-center mb-6 shadow-premium group-hover:shadow-glow transition-all duration-500">
+                  <Users className="w-8 h-8 text-legal-red" />
+                </div>
+                <span className="text-[10px] font-black text-muted uppercase tracking-[0.2em] block mb-2">
+                  {t('about.supervisorLabel')}
+                </span>
+                <h3 className="font-cairo text-xl font-black text-primary mb-3">
+                  {t('about.supervisor')}
+                </h3>
               </div>
-              <span className="text-[10px] font-black text-muted uppercase tracking-[0.2em] block mb-2">
-                {t('about.supervisorLabel')}
-              </span>
-              <h3 className="font-cairo text-2xl font-black text-primary mb-3">
-                {t('about.supervisor')}
-              </h3>
-              <p className="text-xs text-muted">
+              <p className="text-xs text-muted mt-auto">
                 {t('about.faculty')}
               </p>
             </motion.div>
