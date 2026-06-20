@@ -4,7 +4,11 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import Link from 'next/link';
-import { Scale, Loader2, AlertCircle, Briefcase, GraduationCap, Heart, User, Shield } from 'lucide-react';
+import { 
+  Scale, Loader2, AlertCircle, Briefcase, GraduationCap, Heart, User, Shield, 
+  Building2, Gavel, FileSignature, ClipboardCheck, BookOpen, FileSearch, ClipboardList,
+  School, Landmark, ShieldCheck, Coins, Languages, Fingerprint
+} from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export default function RegisterPage() {
@@ -104,28 +108,44 @@ export default function RegisterPage() {
           </div>
           
           <div>
-            <label className="block text-sm font-medium text-primary mb-3">{t('search.type')}</label>
-            <div className="grid grid-cols-2 gap-3">
-              {[
-                { id: 'citizen', label: t('roles.citizen'), icon: User },
-                { id: 'lawyer', label: t('roles.lawyer'), icon: Briefcase },
-                { id: 'student', label: t('roles.student'), icon: GraduationCap },
-                { id: 'admin', label: t('roles.admin'), icon: Shield },
-              ].map((r) => (
-                <button
-                  key={r.id}
-                  type="button"
-                  onClick={() => setRole(r.id)}
-                    className={`flex flex-col items-center justify-center p-3 rounded-xl border transition-all duration-200 group ${
+            <label className="block text-sm font-medium text-primary mb-2 font-inter">{t('search.type')}</label>
+            <div className="max-h-60 overflow-y-auto pr-1 space-y-2 border border-border/50 rounded-xl p-2 bg-soft/30">
+              <div className="grid grid-cols-2 gap-2">
+                {[
+                  { id: 'citizen', label: t('roles.citizen'), icon: User },
+                  { id: 'lawyer', label: t('roles.lawyer'), icon: Briefcase },
+                  { id: 'student', label: t('roles.student'), icon: GraduationCap },
+                  { id: 'company', label: t('roles.company'), icon: Building2 },
+                  { id: 'judge', label: t('roles.judge'), icon: Gavel },
+                  { id: 'notary', label: t('roles.notary'), icon: FileSignature },
+                  { id: 'bailiff', label: t('roles.bailiff'), icon: ClipboardCheck },
+                  { id: 'jurist', label: t('roles.jurist'), icon: BookOpen },
+                  { id: 'expert', label: t('roles.expert'), icon: FileSearch },
+                  { id: 'clerk', label: t('roles.clerk'), icon: ClipboardList },
+                  { id: 'academic', label: t('roles.academic'), icon: School },
+                  { id: 'administration', label: t('roles.administration'), icon: Landmark },
+                  { id: 'customs', label: t('roles.customs'), icon: ShieldCheck },
+                  { id: 'tax_inspector', label: t('roles.tax_inspector'), icon: Coins },
+                  { id: 'translator', label: t('roles.translator'), icon: Languages },
+                  { id: 'police', label: t('roles.police'), icon: Fingerprint },
+                  { id: 'enthusiast', label: t('roles.enthusiast'), icon: Heart },
+                  { id: 'admin', label: t('roles.admin'), icon: Shield },
+                ].map((r) => (
+                  <button
+                    key={r.id}
+                    type="button"
+                    onClick={() => setRole(r.id)}
+                    className={`flex flex-col items-center justify-center p-2.5 rounded-lg border transition-all duration-200 group ${
                       role === r.id 
                         ? 'bg-accent-bg border-legal-red text-legal-red shadow-sm' 
                         : 'bg-soft border-border text-muted hover:border-border-strong'
                     }`}
-                >
-                  <r.icon className={`w-5 h-5 mb-1.5 transition-transform ${role === r.id ? 'scale-110' : 'group-hover:scale-110'}`} />
-                  <span className="text-[11px] font-bold uppercase tracking-wider">{r.label}</span>
-                </button>
-              ))}
+                  >
+                    <r.icon className={`w-4 h-4 mb-1 transition-transform ${role === r.id ? 'scale-110' : 'group-hover:scale-110'}`} />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-center">{r.label}</span>
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
 

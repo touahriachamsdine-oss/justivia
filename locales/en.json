@@ -134,5 +134,25 @@
     "section2Text": "All conversations and consultations you pose to the AI consultant are fully encrypted and strictly confidential. The content of your inquiries is not shared with any third parties and is used only to improve model accuracy locally.",
     "section3Title": "3. User Rights",
     "section3Text": "You have the full right to edit your personal data, or permanently delete your account, which will result in the immediate deletion of all search history and conversations associated with you from our servers."
+  },
+  "roles": {
+    "citizen": "Citizen",
+    "lawyer": "Lawyer",
+    "student": "Law Student",
+    "admin": "Administrator",
+    "enthusiast": "Legal Enthusiast",
+    "company": "Company / Business",
+    "judge": "Judge / Magistrate",
+    "notary": "Notary",
+    "bailiff": "Bailiff / Judicial Commissioner",
+    "jurist": "Jurist / Legal Advisor",
+    "expert": "Judicial Expert",
+    "clerk": "Court Clerk",
+    "academic": "Academic / Law Professor",
+    "administration": "Public Administration",
+    "customs": "Customs Officer",
+    "tax_inspector": "Tax Inspector",
+    "translator": "Legal Translator",
+    "police": "Police / Security Force"
   }
 }

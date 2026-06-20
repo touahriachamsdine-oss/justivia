@@ -134,5 +134,25 @@
     "section2Text": "Toutes les conversations et consultations adressées au consultant IA sont entièrement cryptées et strictement confidentielles. Le contenu de vos requêtes n'est partagé avec aucun tiers et sert uniquement à améliorer la précision du modèle localement.",
     "section3Title": "3. Droits des utilisateurs",
     "section3Text": "Vous dispose en tout temps du droit de modifier vos données personnelles ou de supprimer définitivement votre compte, entraînant l'effacement immédiat de tout l'historique de recherche et des conversations de nos serveurs."
+  },
+  "roles": {
+    "citizen": "Citoyen",
+    "lawyer": "Avocat",
+    "student": "Étudiant en droit",
+    "admin": "Administrateur",
+    "enthusiast": "Passionné de droit",
+    "company": "Entreprise / Société",
+    "judge": "Juge / Magistrat",
+    "notary": "Notaire",
+    "bailiff": "Huissier de justice",
+    "jurist": "Juriste",
+    "expert": "Expert judiciaire",
+    "clerk": "Greffier",
+    "academic": "Enseignant / Académique",
+    "administration": "Administration Publique",
+    "customs": "Agent des Douanes",
+    "tax_inspector": "Inspecteur des Impôts",
+    "translator": "Traducteur Interprète Officiel",
+    "police": "Police / Gendarmerie"
   }
 }

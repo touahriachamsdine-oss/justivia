@@ -10,7 +10,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    const allowedRoles = ['citizen', 'lawyer', 'student', 'admin', 'enthusiast'];
+    const allowedRoles = [
+      'citizen', 'lawyer', 'student', 'admin', 'enthusiast', 
+      'company', 'judge', 'notary', 'bailiff', 'jurist', 
+      'expert', 'clerk', 'academic', 'administration', 'customs',
+      'tax_inspector', 'translator', 'police'
+    ];
     const finalRole = allowedRoles.includes(role) ? role : 'citizen';
 
     const existingUsers = await queryDB('SELECT id FROM users WHERE email = $1', [email]);

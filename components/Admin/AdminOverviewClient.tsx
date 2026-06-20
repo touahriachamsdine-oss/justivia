@@ -37,6 +37,54 @@ export function AdminOverviewClient({
     { label: t('admin.stats.flagged'), value: stats.flaggedQueries, icon: AlertTriangle, color: "text-legal-red", bg: "bg-accent-bg" },
   ];
 
+  const getRoleBarColor = (role: string) => {
+    const colors: Record<string, string> = {
+      admin: 'bg-legal-red',
+      lawyer: 'bg-legal-red/80',
+      student: 'bg-amber-500',
+      citizen: 'bg-slate-500',
+      company: 'bg-blue-500',
+      judge: 'bg-purple-500',
+      notary: 'bg-emerald-500',
+      bailiff: 'bg-rose-500',
+      jurist: 'bg-indigo-500',
+      expert: 'bg-cyan-500',
+      clerk: 'bg-teal-500',
+      enthusiast: 'bg-pink-500',
+      academic: 'bg-lime-500',
+      administration: 'bg-sky-500',
+      customs: 'bg-orange-500',
+      tax_inspector: 'bg-violet-500',
+      translator: 'bg-fuchsia-500',
+      police: 'bg-red-500',
+    };
+    return colors[role] || 'bg-muted';
+  };
+
+  const getRoleBadgeClass = (role: string) => {
+    const badges: Record<string, string> = {
+      admin: 'bg-legal-red/10 text-legal-red border-legal-red/20',
+      lawyer: 'bg-accent-bg text-legal-red border-legal-red/20',
+      student: 'bg-amber-500/10 text-amber-600 dark:text-amber-400 border-amber-500/20',
+      citizen: 'bg-slate-500/10 text-slate-600 dark:text-slate-400 border-slate-500/20',
+      company: 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border-blue-500/20',
+      judge: 'bg-purple-500/10 text-purple-600 dark:text-purple-400 border-purple-500/20',
+      notary: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border-emerald-500/20',
+      bailiff: 'bg-rose-500/10 text-rose-600 dark:text-rose-400 border-rose-500/20',
+      jurist: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 border-indigo-500/20',
+      expert: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border-cyan-500/20',
+      clerk: 'bg-teal-500/10 text-teal-600 dark:text-teal-400 border-teal-500/20',
+      enthusiast: 'bg-pink-500/10 text-pink-600 dark:text-pink-400 border-pink-500/20',
+      academic: 'bg-lime-500/10 text-lime-600 dark:text-lime-400 border-lime-500/20',
+      administration: 'bg-sky-500/10 text-sky-600 dark:text-sky-400 border-sky-500/20',
+      customs: 'bg-orange-500/10 text-orange-600 dark:text-orange-400 border-orange-500/20',
+      tax_inspector: 'bg-violet-500/10 text-violet-600 dark:text-violet-400 border-violet-500/20',
+      translator: 'bg-fuchsia-500/10 text-fuchsia-600 dark:text-fuchsia-400 border-fuchsia-500/20',
+      police: 'bg-red-500/10 text-red-600 dark:text-red-400 border-red-500/20',
+    };
+    return badges[role] || 'bg-soft text-muted border-border-subtle';
+  };
+
   return (
     <div className="space-y-8 animate-in fade-in duration-700">
       {/* Top Stats Grid */}
@@ -159,7 +207,9 @@ export function AdminOverviewClient({
               <div key={i} className="flex justify-between items-center p-4 bg-soft/50 rounded-xl border border-border-subtle hover:bg-soft transition-all text-sm group">
                 <span className="text-secondary truncate max-w-[300px] font-bold font-cairo group-hover:text-legal-red transition-colors text-base">&quot;{q.query}&quot;</span>
                 <div className="flex gap-4 text-muted text-xs items-center font-bold font-inter">
-                   <span className="bg-card text-secondary px-2.5 py-1 rounded-lg uppercase border border-border">{t(`roles.${q.user_role}`) || q.user_role}</span>
+                   <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-tight border ${getRoleBadgeClass(q.user_role)}`}>
+                     {t(`roles.${q.user_role}`) || q.user_role}
+                   </span>
                    <span>{new Date(q.timestamp).toLocaleTimeString()}</span>
                 </div>
               </div>
@@ -185,11 +235,10 @@ export function AdminOverviewClient({
                   </div>
                   <div className="h-3 w-full bg-soft rounded-full overflow-hidden border border-border-subtle shadow-inner">
                     <div 
-                      className={`h-full transition-all duration-1000 ${r.role === 'admin' ? 'bg-primary' : 'bg-legal-red'}`} 
+                      className={`h-full transition-all duration-1000 ${getRoleBarColor(r.role)}`} 
                       style={{ width: `${(r.count / (stats.totalUsers || 1)) * 100}%` }}
                     />
                   </div>
-
                 </div>
              ))}
           </div>
