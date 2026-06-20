@@ -73,9 +73,21 @@
     "email": "Email",
     "password": "Password",
     "submit": "Sign In",
-    "noAccount": "No account?",
+    "noAccount": "No account? ",
     "register": "Sign Up",
-    "adminLogin": "Admin Access"
+    "adminLogin": "Admin Access",
+    "welcomeBack": "Welcome Back",
+    "signInDesc": "Sign in to access your legal consultations",
+    "invalidCreds": "Invalid email or password",
+    "unexpectedError": "An unexpected error occurred. Please try again.",
+    "createOne": "Create one",
+    "joinJustivia": "Join Justivia",
+    "registerDesc": "Create an account to save consultations and explore laws",
+    "fullName": "Full Name",
+    "fullNamePlaceholder": "John Doe",
+    "emailPlaceholder": "you@example.com",
+    "registrationFailed": "Registration failed. Please check your details.",
+    "haveAccount": "Already have an account? "
   },
   "categories": {
     "all": "All",

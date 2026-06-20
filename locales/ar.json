@@ -73,9 +73,21 @@
     "email": "البريد الإلكتروني",
     "password": "كلمة المرور",
     "submit": "دخول",
-    "noAccount": "ليس لديك حساب؟",
+    "noAccount": "ليس لديك حساب؟ ",
     "register": "إنشاء حساب",
-    "adminLogin": "دخول المشرف"
+    "adminLogin": "دخول المشرف",
+    "welcomeBack": "مرحباً بك مجدداً",
+    "signInDesc": "سجل الدخول للوصول إلى استشاراتك القانونية",
+    "invalidCreds": "البريد الإلكتروني أو كلمة المرور غير صالحة",
+    "unexpectedError": "حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.",
+    "createOne": "أنشئ حساباً",
+    "joinJustivia": "انضم إلى جستيفيا",
+    "registerDesc": "أنشئ حساباً لحفظ استشاراتك واستكشاف القوانين",
+    "fullName": "الاسم الكامل",
+    "fullNamePlaceholder": "أدخل اسمك الكامل",
+    "emailPlaceholder": "you@example.com",
+    "registrationFailed": "فشل التسجيل. يرجى التحقق من بياناتك.",
+    "haveAccount": "هل لديك حساب بالفعل؟ "
   },
   "categories": {
     "all": "الكل",

@@ -73,9 +73,21 @@
     "email": "E-mail",
     "password": "Mot de passe",
     "submit": "Se connecter",
-    "noAccount": "Pas de compte ?",
+    "noAccount": "Pas de compte ? ",
     "register": "S'inscrire",
-    "adminLogin": "Accès Admin"
+    "adminLogin": "Accès Admin",
+    "welcomeBack": "Bon retour",
+    "signInDesc": "Connectez-vous pour accéder à vos consultations juridiques",
+    "invalidCreds": "E-mail ou mot de passe incorrect",
+    "unexpectedError": "Une erreur inattendue est survenue. Veuillez réessayer.",
+    "createOne": "Créer un compte",
+    "joinJustivia": "Rejoindre Justivia",
+    "registerDesc": "Créez un compte pour enregistrer vos consultations et explorer les lois",
+    "fullName": "Nom complet",
+    "fullNamePlaceholder": "Jean Dupont",
+    "emailPlaceholder": "vous@exemple.com",
+    "registrationFailed": "Échec de l'inscription. Veuillez vérifier vos informations.",
+    "haveAccount": "Vous avez déjà un compte ? "
   },
   "categories": {
     "all": "Tous",
