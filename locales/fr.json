@@ -128,24 +128,28 @@
   "terms": {
     "title": "Conditions d'utilisation & Services",
     "subtitle": "Règles régissant l'utilisation de la plateforme d'intelligence juridique Justivia",
-    "intro": "Votre utilisation de la plateforme Justivia est régie par ces conditions générales. En naviguant sur la plateforme ou en utilisant le consultant IA, vous acceptez de vous conformer pleinement à ces termes.",
-    "section1Title": "1. Nature du service",
-    "section1Text": "Justivia est une plateforme d'IA interactive visant à simuler et interpréter les textes juridiques algériens. Les réponses fournies par le consultant virtuel sont à titre indicatif et éducatif uniquement et ne constituent pas un conseil juridique officiel remplaçant un avocat ou un juge.",
-    "section2Title": "2. Responsabilité juridique",
-    "section2Text": "Nous déployons tous nos efforts pour assurer l'exactitude et la mise à jour des textes juridiques et des réponses générées par le système. Cependant, la plateforme et ses développeurs déclinent toute responsabilité quant aux décisions prises sur la base des résultats de l'IA sans consulter le Journal Officiel.",
-    "section3Title": "3. Conditions d'utilisation acceptable",
-    "section3Text": "Il est interdit d'utiliser la plateforme pour générer du contenu offensant, lancer des cyberattaques ou extraire des données de manière excessive au détriment de l'infrastructure. La plateforme se réserve le droit de bannir tout compte enfreignant ces conditions."
+    "intro": "Votre utilisation de la plateforme Justivia est régie par ces conditions générales. En naviguant sur la plateforme ou en utilisant le consultant IA, vous acceptez de vous conformer pleinement à ces termes dans le cadre législatif de la République Algérienne Démocratique et Populaire.",
+    "section1Title": "1. Nature du service et cadre académique",
+    "section1Text": "Justivia est une plateforme de simulation interactive par IA développée dans le cadre d'un projet de fin d'études à l'Université de Larbi Tebessi - Tébessa (Faculté de Droit). Elle vise à simuler et à interpréter les textes juridiques algériens, en particulier le droit administratif. Les réponses générées sont fournies uniquement à des fins de recherche, d'éducation et d'orientation, et ne constituent pas un avis juridique officiel remplaçant une consultation auprès d'un avocat agréé par l'Union Nationale des Ordres des Avocats (UNOA).",
+    "section2Title": "2. Sources officielles et exclusion de responsabilité",
+    "section2Text": "Bien que nous nous efforrions d'aligner les résultats de l'IA et l'index des lois avec les textes législatifs algériens, la plateforme décline toute responsabilité quant aux décisions prises sur la base de ses résultats. La seule source officielle et juridiquement opposable demeure le Journal Officiel de la République Algérienne (JORADP). Les utilisateurs doivent impérativement vérifier tout texte législatif généré auprès des publications officielles.",
+    "section3Title": "3. Utilisation acceptable et Loi 09-04 sur la cybercriminalité",
+    "section3Text": "Il est interdit de faire un usage abusif de la plateforme, de tenter des accès non autorisés, du scraping ou des attaques par saturation. Toute intrusion ou manipulation frauduleuse de ce système fera l'objet de poursuites judiciaires conformément à la Loi n° 09-04 du 5 août 2009 fixant les règles de prévention et de lutte contre les infractions liées aux technologies de l'information et de la communication, ainsi qu'aux dispositions applicables du Code pénal algérien.",
+    "section4Title": "4. Droit applicable et juridiction compétente",
+    "section4Text": "Ces conditions d'utilisation sont régies et interprétées conformément aux lois de la République Algérienne Démocratique et Populaire. Tout litige découlant de l'utilisation de ce simulateur ou de cette plateforme sera soumis à la juridiction exclusive des tribunaux administratifs et judiciaires compétents de Tébessa, Algérie."
   },
   "privacy": {
     "title": "Politique de confidentialité",
     "subtitle": "Comment nous protégeons vos données personnelles et vos interactions",
-    "intro": "Chez Justivia, nous nous engageons à respecter les niveaux de confidentialité et de vie privée les plus élevés pour les données de nos utilisateurs, conformément aux réglementations applicables.",
-    "section1Title": "1. Données que nous collectons",
-    "section1Text": "Nous collectons les données d'inscription de base (nom et e-mail) pour améliorer votre expérience, permettre la sauvegarde des lois favorites et stocker l'historique des conversations juridiques.",
-    "section2Title": "2. Confidentiality of Conversations",
-    "section2Text": "Toutes les conversations et consultations adressées au consultant IA sont entièrement cryptées et strictement confidentielles. Le contenu de vos requêtes n'est partagé avec aucun tiers et sert uniquement à améliorer la précision du modèle localement.",
-    "section3Title": "3. Droits des utilisateurs",
-    "section3Text": "Vous dispose en tout temps du droit de modifier vos données personnelles ou de supprimer définitivement votre compte, entraînant l'effacement immédiat de tout l'historique de recherche et des conversations de nos serveurs."
+    "intro": "Chez Justivia, nous nous engageons à respecter les niveaux de confidentialité et de protection des données les plus élevés pour nos utilisateurs, en assurant une conformité stricte avec la Loi n° 18-07 du 10 juin 2018 relative à la protection des personnes physiques dans le traitement des données à caractère personnel en Algérie.",
+    "section1Title": "1. Traitement des données et conformité à la Loi 18-07",
+    "section1Text": "Conformément aux articles 4 et 24 de la loi algérienne n° 18-07, nous collectons et traitons uniquement les données personnelles nécessaires (telles que le nom, l'adresse e-mail et le rôle professionnel) pour personnaliser votre expérience, permettre la sauvegarde de vos favoris et conserver l'historique des consultations juridiques. Aucune collecte de données excessives n'est effectuée.",
+    "section2Title": "2. Souveraineté des données et sécurité des échanges",
+    "section2Text": "Toutes les consultations juridiques adressées au consultant virtuel sont traitées de manière sécurisée sur des serveurs hébergés localement. Conformément aux principes de souveraineté numérique nationale, vos conversations et requêtes ne sont pas transférées hors du territoire national algérien et sont exclusivement utilisées pour optimiser le modèle d'IA localement sans exposition à des tiers.",
+    "section3Title": "3. Droits des personnes concernées (Accès, Rectification et Suppression)",
+    "section3Text": "En vertu de la section 2 de la Loi n° 18-07, vous disposez d'un droit d'accès (Article 33), de rectification (Article 34) et d'opposition ou de suppression (Article 35 - Droit à l'oubli) de vos données personnelles. Vous pouvez exercer ces droits directement en supprimant votre compte depuis vos paramètres de profil, ce qui effacera immédiatement et définitivement toutes vos données et votre historique de nos serveurs.",
+    "section4Title": "4. Contrôle de l'autorité de régulation",
+    "section4Text": "Le traitement des données personnelles sur cette plateforme s'inscrit dans le cadre réglementaire contrôlé par l'Autorité Nationale de Protection des Données à Caractère Personnel (ANPDP) en Algérie. Pour toute question relative à vos données, vous pouvez vous référer aux directives de l'ANPDP."
   },
   "roles": {
     "citizen": "Citoyen",

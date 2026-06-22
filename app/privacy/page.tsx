@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { LawWatermark } from '@/components/UI/LawWatermark';
 import { FloatingBackground } from '@/components/UI/FloatingBackground';
 import { motion } from 'framer-motion';
-import { Shield, Eye, Lock, UserCheck } from 'lucide-react';
+import { Shield, Eye, Lock, UserCheck, Mail } from 'lucide-react';
 import { useEffect, useState } from 'react';
 
 export default function PrivacyPage() {
@@ -129,6 +129,26 @@ export default function PrivacyPage() {
                 </h2>
                 <p className="text-secondary leading-relaxed text-sm md:text-base">
                   {t('privacy.section3Text')}
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Section 4 */}
+          <motion.div 
+            variants={itemVariants}
+            className="p-8 rounded-3xl bg-card shadow-premium border border-white/5 relative group transition-all duration-500"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-soft rounded-2xl flex items-center justify-center shrink-0 shadow-premium">
+                <Mail className="w-6 h-6 text-legal-red" />
+              </div>
+              <div>
+                <h2 className="font-cairo text-xl font-black text-primary mb-3">
+                  {t('privacy.section4Title')}
+                </h2>
+                <p className="text-secondary leading-relaxed text-sm md:text-base">
+                  {t('privacy.section4Text')}
                 </p>
               </div>
             </div>

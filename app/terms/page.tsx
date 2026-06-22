@@ -133,6 +133,26 @@ export default function TermsPage() {
               </div>
             </div>
           </motion.div>
+
+          {/* Section 4 */}
+          <motion.div 
+            variants={itemVariants}
+            className="p-8 rounded-3xl bg-card shadow-premium border border-white/5 relative group transition-all duration-500"
+          >
+            <div className="flex items-start gap-4">
+              <div className="w-12 h-12 bg-soft rounded-2xl flex items-center justify-center shrink-0 shadow-premium">
+                <Scale className="w-6 h-6 text-legal-red" />
+              </div>
+              <div>
+                <h2 className="font-cairo text-xl font-black text-primary mb-3">
+                  {t('terms.section4Title')}
+                </h2>
+                <p className="text-secondary leading-relaxed text-sm md:text-base">
+                  {t('terms.section4Text')}
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </div>
